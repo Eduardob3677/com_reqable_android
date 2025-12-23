@@ -1,0 +1,1315 @@
+ANÁLISIS DE CÓDIGO SMALI - REQABLE ANDROID
+================================================================================
+
+Total de clases: 8196
+
+CLASES PRINCIPALES DE REQABLE:
+--------------------------------------------------------------------------------
+Lcom/reqable/android/MainActivity
+  Métodos: onCreate
+Lcom/reqable/android/NetbareVpnService
+  Métodos: b, d, findAppPortByProxyPort, onCreate
+Lcom/reqable/android/ReqableAliveService
+  Métodos: a, onBind, onCreate, onStartCommand
+Lcom/reqable/android/ReqableAliveService$a
+Lcom/reqable/android/plugin/appdump/ReqableAppdumpPlugin
+  Métodos: dumpApp, dumpStackTrace, onAttachedToEngine, onDetachedFromEngine, onMethodCall
+
+
+STRINGS INTERESANTES:
+--------------------------------------------------------------------------------
+  Destroying: 
+ HTTP/1.1
+ RevenueCat keys to migrate: 
+ This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.
+ To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+ authParams=
+ cipherSuite=
+ did not call through to super.onDestroy()
+ did not call through to super.onDestroyView()
+ encodedPayload
+ encoder
+ for key \
+ has already been destroyed. Nested fragments should always use the child FragmentManager.
+ is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).
+ is an unsupported authority. Only com.google.android.gms.phenotype authority is supported.
+ mDestroyed=
+ presented after app destruction expiring it now!
+ private key (
+ with key 
+$clevertapId
+$fcmTokens
+$keyword
+$this$buildClassSerialDescriptor
+$this$buildSerialDescriptor
+%s cannot be encoded inline
+%s failed via GoogleAuthServiceClient, falling back to previous approach:\n%s
+, allowStructuredMapKeys=
+, apiKey=
+, apiKeyValidationResult=
+, assetBaseURL=
+, description=
+, encodedPayload=
+, hermeticFileOverrides=
+, httpResult=
+, ignoreUnknownKeys=
+, intermediateKeyExpiration=
+, intermediateKeySignature=
+, modes=
+, offerOverrides=
+, offerToken=
+, overrideSourceLid=
+, overrides=
+, purchaseToken: 
+, purchaseToken=
+, required API level is: 
+, serverDescription=
+, the oldest config is now: 
+, token=
+-----BEGIN PUBLIC KEY-----
+-----END PUBLIC KEY-----
+--disable-service-auth-codes
+. By default, non-finite floating point values are prohibited because they do not conform JSON specification. It is possible to deserialize them using \'JsonBuilder.allowSpecialFloatingPointValues = true\'\nCurrent output: 
+.ModuleDescriptor
+.tokens
+.wxapi.WXEntryActivity
+110 HttpURLConnection \
+113 HttpURLConnection \
+:authority
+; contentDescription: 
+; httponly
+; password: 
+<name for destructuring parameter 0>
+@com.google.firebase.encoders.proto.Protobuf
+A KeyboardManager was destroyed with 
+A redispatched key event was consumed before reaching KeyboardManager
+ALGORITHM_REQUIRES_BORINGCRYPTO
+ALPN callback dropped: HTTP/2 is disabled. Is alpn-boot on the boot class path?
+AMAZON_KEY_GOOGLE_STORE
+ANSIX12_ENCODE
+API availability must not be null
+API failed to connect while resuming due to an unknown error.
+API key must be set. Get this from the RevenueCat web app
+API request completed with status: %s %s %s
+API request started: %s %s
+API: 
+API_DISABLED
+API_DISABLED_FOR_CONNECTION
+API_NOT_CONNECTED
+API_UNAVAILABLE
+API_VERSION_UPDATE_REQUIRED
+ASCII_ENCODE
+AUTH_BINDING_ERROR
+AUTH_INSTANTIATION
+AUTH_SECURITY_ERROR
+AUTH_TOKEN_VERIFICATION_FAILURE
+Aang__create_auth_exception_with_pending_intent
+Aang__switch_clear_token_to_aang
+Acknowledging purchase with token %s
+Activity has been destroyed
+Activity passed into launchBillingFlow has a null intent, which may cause a crash. See https://github.com/RevenueCat/purchases-android/issues/381 for more information.
+Activity->onDestroy.  Activity: 
+ActivityOnDestroy Error: 
+ActivityOnDestroy Time: 
+AndroidKeyStore
+Api must not be null
+Api must not be null.
+ApiCallRunner
+ApiFailure should not be null
+ApiKey cannot be null
+ApiSuccess should not be null
+ApkAssets
+App is destroyed: 
+AppLifeCycle application has been destroyed
+Apple Subscription Key is invalid or not present. In order to provide subscription offers, you must first generate a subscription key. Please see https://docs.revenuecat.com/docs/ios-subscription-offers for more info.
+AppstoreAuthenticationKey.pem
+At least one cipher suite is required
+Attempted to get clipboard data that requires additional permission(s).\nSee the exception details for which permission(s) are required, and consider adding them to your Android Manifest as described in:\nhttps://developer.android.com/guide/topics/permissions/overview
+Auth
+Auth.CREDENTIALS_API
+Auth.GOOGLE_SIGN_IN_API
+Auth.PROXY_API
+AuthBindingError
+AuthSecurityError
+AuthSignInClient
+AuthToken verification failed
+Authorization
+BAD_AUTHENTICATION
+BAD_PASSWORD
+BAD_TOKEN_REQUEST
+BASE256_ENCODE
+BUG: empty/null token!
+BackendExpiredWebRedemptionToken
+BackendInvalidAPIKey
+BackendInvalidAppStoreSharedSecret
+BackendInvalidAppleSubscriptionKey
+BackendInvalidAuthToken
+BackendInvalidReceiptToken
+BackendInvalidWebRedemptionToken
+BackgroundAwareCallbackCacheKey(cacheKey=
+Bad Base64 input character decimal %d in array position %d
+BadAuthentication
+Base64 input not properly padded.
+Base64-encoded string must have at least four characters, but length specified was 
+BillingClient queryProductDetails has returned more than once, with result: %s. More info here: https://rev.cat/google-duplicated-listener-timeouts
+BillingClient queryPurchaseHistory has returned more than once, with result: %s. More info here: https://rev.cat/google-duplicated-listener-timeouts
+Blockstore.API
+Boolean literal for key \'
+C40_ENCODE
+CREATE TABLE event_metadata (_id INTEGER PRIMARY KEY, event_id INTEGER NOT NULL, name TEXT NOT NULL, value TEXT NOT NULL,FOREIGN KEY (event_id) REFERENCES events(_id) ON DELETE CASCADE)
+CREATE TABLE event_payloads (sequence_num INTEGER NOT NULL, event_id INTEGER NOT NULL, bytes BLOB NOT NULL,FOREIGN KEY (event_id) REFERENCES events(_id) ON DELETE CASCADE,PRIMARY KEY (sequence_num, event_id))
+CREATE TABLE events (_id INTEGER PRIMARY KEY, context_id INTEGER NOT NULL, transport_name TEXT NOT NULL, timestamp_ms INTEGER NOT NULL, uptime_ms INTEGER NOT NULL, payload BLOB NOT NULL, code INTEGER, num_attempts INTEGER NOT NULL,FOREIGN KEY (context_id) REFERENCES transport_contexts(_id) ON DELETE CASCADE)
+CREATE TABLE global_log_event_state (last_metrics_upload_ms BIGINT PRIMARY KEY)
+CREATE TABLE log_event_dropped (log_source VARCHAR(45) NOT NULL,reason INTEGER NOT NULL,events_dropped_count BIGINT NOT NULL,PRIMARY KEY(log_source, reason))
+CREATE TABLE transport_contexts (_id INTEGER PRIMARY KEY, backend_name TEXT NOT NULL, priority INTEGER NOT NULL, next_request_ms INTEGER NOT NULL)
+CacheLoader returned null for key 
+Can be deserialized only by JSON
+Can only deserialize 
+Can only deserialize PaywallComponent from JSON, got: 
+Can\'t begin reading element, unexpected token
+Cannot begin reading element, unexpected token: 
+Cannot construct an Api with a null ClientBuilder
+Cannot construct an Api with a null ClientKey
+Cannot convert given bytes to extended projective coordinates. Computed x is zero and encoded x\'s least significant bit is not zero
+Cannot decode null source array.
+Cannot encode a second value in the ValueEncoderContext
+Cannot execute method on a destroyed FlutterActivityAndFragmentDelegate.
+Cannot read polymorphic value before its type token
+Cannot recover auth because app is not in foreground. 
+Cannot return null from a non-@Nullable @Provides method
+Checking KiwiDataStore for key...
+Checking if application is destroyed
+Cipher 
+Cleaning previously sent tokens
+Clearing fragment result with key 
+Client does not support offer_id_token.
+ClientTelemetry.API
+ConnectionSpec(cipherSuites=
+Consuming purchase with token %s
+Consuming purchase with token: 
+ContextDescriptor(kClass: 
+Continuation token: 
+Could not decode string
+Could not find API instance 
+Could not find ProductDetails for %s \nThere is a problem with your configuration in Play Store Developer Console. More info here: https://errors.rev.cat/configuring-products
+Couldn\'t decode cached VirtualCurrencies. Error: %s
+Couldn\'t encode request, returning with 400
+Couldn\'t find encoder for type 
+Couldn\'t find meta-data for provider with authority 
+Couldn\'t find sku for token %s
+DATA_AUTHENTICATION_KEY
+DATA_AUTH_KEY_LOAD_FAILURE
+DECODE
+DESTROY
+DESTROYED
+DROP_OLDEST
+Data to encode was null.
+DataAuthenticationKeyLoaderV2
+DataAuthenticationKeyLoaderV3
+DeadObjectException thrown while running ApiCallRunner.
+Default deserializers provider for 
+Descriptor for type `kotlin.Nothing` does not have elements
+Desired length 
+DesktopDropPlugin
+Destination array was null.
+Destination array with length %d cannot have offset of %d and still store three bytes.
+Destroying.
+Do not use this function in API 29 or later.
+Duplex connections are not supported for HTTP/1
+ECI_ENCODE
+EDIFACT_ENCODE
+ERROR_INVALID_LICENSING_KEYS
+ERR_MISCONFIGURED_AUTH_ENVIRONMENT: %s permission not granted. Aborting authentication
+ERR_MISCONFIGURED_AUTH_ENVIRONMENT: GET_ACCOUNTS permission not granted. Aborting authentication.
+ERR_MISCONFIGURED_AUTH_ENVIRONMENT: USE_CREDENTIALS permission not granted. Aborting authentication.
+ERR_MISSING_AUTH_CREDENTIALS: Found %d accounts eligible for the kerberos authentication. Please fix the configuration by providing a single account.
+ERR_MISSING_AUTH_CREDENTIALS: No account provided for the kerberos authentication. Please verify the configuration policies and that the CONTACTS runtime permission is granted. 
+ERR_UNEXPECTED: Error while attempting to obtain a token.
+EXPIRED_OFFER_TOKEN
+Element in keys cannot be null or empty
+EncodedPayload{encoding=
+Encountered an unknown key \'
+Error building BillingFlowParams which is required to perform purchases in the Play store. This is due to an issue in Google\'s Billing Client library. Please check https://errors.rev.cat/no-core-library-desugaring for more info and to fix this issue.
+Error consuming purchase with token. Response code: 
+Error deserializing paywall components data
+Error deserializing paywall data
+Error deserializing subscription information
+Error deserializing subscription information. The input is not a SubscriptionInfo
+Error deserializing ui_config
+Error in Base64 code reading stream.
+Error parsing expired redemption token response: 
+Error registering plugin desktop_drop, one.mixin.desktop.drop.DesktopDropPlugin
+Error registering plugin flutter_web_auth, com.linusu.flutter_web_auth.FlutterWebAuthPlugin
+Error trying to decode SkuDetails.
+Error verifying intermediate key.
+Error while loading asset 
+Exception while encrypting input with 
+Expected URL scheme \'http\' or \'https\' but no scheme was found for 
+Expected URL scheme \'http\' or \'https\' but was \'
+Expected comma after the key-value pair
+Extra is not a valid encoded LegacyFlgDestination
+FCM_TOKENS
+Failed attempt to recover authentication
+Failed parsing Api failure.
+Failed to URL-encode argument
+Failed to authenticate data: 
+Failed to authenticate with proxy
+Failed to close AssetFileDescriptor while trying to read text from URI.
+Failed to decode image
+Failed to get user data. Make sure sandbox mode is enabled if using App Tester. https://rev.cat/enter-amazon-sandbox
+Failed to load module descriptor class: 
+Failed to migrate preference with key due to type casting: 
+Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.
+FieldDescriptor{name=
+FileDescriptor.setInt$() failed
+FileSelectorApiImpl
+FontRequest {mProviderAuthority: 
+For StructureKind.CLASS please use \'buildClassSerialDescriptor\' instead
+FragmentManager has been destroyed
+GMS core API Availability. ConnectionResult=%s, tag=%s
+GOOGLE_KEY_AMAZON_STORE
+Given public key\'s length is not %s.
+Google Play In-app Billing API version is less than 3
+Google Play In-app Billing API version is less than 9
+GoogleApiActivity
+GoogleApiAvailability
+GoogleApiClient must not be null
+GoogleApiHandler
+GoogleApiManager
+GoogleAuthService.API
+GoogleAuthServiceClient
+GoogleAuthServiceClientImpl disconnected with reason: 
+GoogleAuthSvcClientImpl
+GoogleAuthUtil
+Got a JSON exception trying to decode BillingConfig. \n Exception: 
+Got a JSON exception trying to decode ProductDetails. \n Exception: 
+Got an exception trying to decode the purchase!
+H2_PRIOR_KNOWLEDGE cannot be used with HTTPS
+HTTP 
+HTTP Response payload is null
+HTTP/1.
+HTTP/1.0
+HTTP/1.1
+HTTP/1.1 
+HTTPRequest(fullURL=
+HTTPResult(responseCode=
+HTTPResultWithETag(eTagData=
+HTTP_1_0
+HTTP_1_1
+HTTP_1_1_REQUIRED
+HTTP_2
+HTTP_REQUEST_PERFORMED
+HermeticFileOverrides
+Http2::class.java.name
+Http2Connection.Listener failure for 
+HttpUrlPinger
+IDiffDevOAuth.stopAuth / detach invoked
+INAPP_CONTINUATION_TOKEN
+INTERMEDIATE_KEY
+INTERMEDIATE_KEY_EXPIRATION
+INTERMEDIATE_KEY_SIGNATURE
+INVALID_LINK_SIGNING_KEY
+INVALID_LINK_SIGNING_KEY_ENCRYPTION
+INVALID_TOKEN
+IN_APP_MESSAGE_PURCHASE_TOKEN
+IS_KEYBOARD_KEY
+ImageReaderPlatformViewRenderTarget requires API version 29+
+Improperly padded Base64 input.
+In-app billing API does not support subscription on this device.
+In-app billing API version 3 is not supported on this device.
+Intermediate key expired at 
+Invalid character in Base64 data.
+Invalid index in polymorphic deserialization of 
+Invalid purchase token.
+InvalidAppleSubscriptionKeyError
+Issue deserializing CustomerCenter HelpPath. Ignoring. Error: 
+It is possible to deserialize them using \'JsonBuilder.allowSpecialFloatingPointValues = true\'
+JsonConfiguration(encodeDefaults=
+KEYWORD
+KEY_CATEGORY_IDS
+KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS
+KEY_COMPONENT_ACTIVITY_PENDING_RESULT
+KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT
+KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS
+KEY_COMPONENT_ACTIVITY_REGISTERED_RCS
+KEY_DIMEN_BOTTOM
+KEY_DIMEN_LEFT
+KEY_DIMEN_RIGHT
+KEY_DIMEN_TOP
+KEY_FLUWX_EXTRA
+KEY_LAUNCH_INTENT
+KEY_RECEIPT_STRING
+KEY_REQUEST_ID
+KEY_TIMESTAMP
+KEY_USER_ID
+KEY_WINDOW_TOKEN
+Key 
+Key was cached: 
+KeyEventChannel
+KeyboardManager
+Keys cannot be set to null
+Kiwi.ActivityOnDestroy Error: 
+Kiwi.ActivityOnDestroy Time: 
+Kiwi.ServiceOnDestroy Time: 
+Loading authentication key from apk...
+Loading data authentication key...
+Local module descriptor class for 
+LocalizationKey(value=
+Looks like you\'re using a Google API key but have configured the SDK for the Amazon app store.\nEither use an Amazon API key which should look like \'amzn_1a2b3c4d5e6f7h\' or configure the SDK to use Google.\nSee https://rev.cat/auth for more details.
+Looks like you\'re using a legacy API key.\nThis is still supported, but it\'s recommended to migrate to using platform-specific API key, which should look like \'goog_1a2b3c4d5e6f7h\' or \'amzn_1a2b3c4d5e6f7h\'.\nSee https://rev.cat/auth for more details.
+Looks like you\'re using an Amazon API key but have configured the SDK for the Google play store.\nEither use a Google API key which should look like \'goog_1a2b3c4d5e6f7h\' or configure the SDK to use Amazon.\nSee https://rev.cat/auth for more details.
+Map keys must be Integer
+Map keys must be Long
+Map keys must be String
+Map keys must not be null
+Map keys or values must not be null
+Method is not supported by connectionless client. APIs supporting connectionless client must not call this method.
+MicroMsg.SDK.DiffDevOAuth
+MicroMsg.SDK.DiffDevOAuthFactory
+MicroMsg.SDK.SendAuth.Req
+MicroMsg.SDK.SendAuth.Resp
+MicroMsg.SDK.WXAPiSecurityHelper
+MicroMsg.SDK.WXApiImplV10
+MicroMsg.SDK.WXGetA8Key.Req
+MicroMsg.SDK.WXInvoiceAuthInsert.Req
+MicroMsg.SDK.WXLaunchMiniProgramWithToken.Req
+Missing endpoint in CCTDestination extras
+Missing resolution for ConnectionResult.RESOLUTION_REQUIRED. Call GoogleApiAvailability#showErrorNotification(Context, ConnectionResult) instead.
+Module descriptor id \'
+Multiple entries with same key: 
+Must not be called on GoogleApiHandler thread.
+NavigateTo(destination=
+No SpellCheckeMethodHandler registered, call not forwarded to spell check API.
+No authority: 
+No encoder for 
+No mock found for the native implementation for org.chromium.net.HttpNegotiateAuthenticator.Natives. The current configuration requires all native implementations to have a mock instance.
+No package found for authority: 
+No such TextCapitalization: 
+None of the queried APIs are available. 
+NothingSerialDescriptor
+Null encodedPayload
+OAuthErrCode:
+ON_DESTROY
+Offline entitlements are not supported for one time purchases. Found one time purchases. See for more info: https://rev.cat/offline-entitlements
+OkHttp
+OkHttp 
+OkHttp-Preemptive
+OkHttpClient::class.java.name
+Old SKU purchase information(token/id) or original external transaction id must be provided.
+One of the API components you attempted to connect to is not available.
+Only String keys are currently supported in maps, got %s of type %s instead.
+PAD_ENCODE
+PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n
+Placing auth key into storage
+Placing non-expiring value into store with key: 
+Placing value into store with key: 
+Platform views cannot be displayed below API level 23You can prevent this issue by setting `minSdkVersion: 23` in build.gradle.
+Please configure the Play Store/Amazon store app on the RevenueCat dashboard and use its corresponding API key before releasing.
+Please describe your issue or question.
+Please provide Old SKU purchase information(token/id) or original external transaction id, not both.
+Please provide a valid purchase token.
+PopupWindowCompatApi21
+Preemptive Authenticate
+Primitive descriptor does not have elements
+Primitive element has not been recorded. Is call to .encodeXxx is missing in serializer?
+Primitive element was already recorded. Does call to .encodeXxx happen more than once?
+PrimitiveDescriptor(
+Proxy-Authenticate
+Proxy-Authorization
+Purchase token must be set
+RESUME_TOKEN
+Received HTTP_PROXY_AUTH (407) code while not using proxy
+Redemption token is missing web redemption deep link. Ignoring.
+Removing value associated with key: 
+Request already scheduled with jitter delay, adding existing callbacks to unjittered request with key: %s
+Request already scheduled without jitter delay, adding callbacks to unjittered request with key: %s
+Request failed signature verification. Please see https://rev.cat/trusted-entitlements for more info.
+SHA384withRSA
+SIGNED_TOKEN_PARSE_FAILURE
+SIGNED_TOKEN_VERIFICATION_FAILURE
+SKU_OFFER_ID_TOKEN_LIST
+SSI_INVALID_LINK_SIGNING_KEY
+SSI_INVALID_LINK_SIGNING_KEY_ENCRYPTION
+SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA
+SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA
+SSL_DHE_DSS_WITH_DES_CBC_SHA
+SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA
+SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA
+SSL_DHE_RSA_WITH_DES_CBC_SHA
+SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA
+SSL_DH_anon_WITH_3DES_EDE_CBC_SHA
+SSL_DH_anon_WITH_DES_CBC_SHA
+SSL_RSA_EXPORT_WITH_DES40_CBC_SHA
+SSL_RSA_EXPORT_WITH_RC4_40_MD5
+SSL_RSA_WITH_3DES_EDE_CBC_SHA
+SSL_RSA_WITH_DES_CBC_SHA
+SSL_RSA_WITH_NULL_MD5
+SSL_RSA_WITH_NULL_SHA
+SSL_RSA_WITH_RC4_128_MD5
+SSL_RSA_WITH_RC4_128_SHA
+Same call already in progress, adding to callbacks map with key: %s
+SavedStateProvider with the given key is already registered
+Saving token %s with hash %s
+Saving tokens %s
+SecurityException while bind to auth service: %s
+SecurityException while binding to Auth service.
+Serializer.\n                Please refer to SerialDescriptor documentation for additional information.\n            
+Sign-out occurred while this API call was in progress.
+SignIn.API
+SignIn.INTERNAL_API
+Signature(intermediateKey=
+Signed Token: 
+SignedToken
+Some of the queried APIs are unavailable. 
+Storing event with priority=%s, name=%s for destination %s
+String literal for key \'
+SubscriberAttribute(key=
+SubscriberAttributeError(keyName=
+SubscriberAttributeKey(\'
+Super calls with default arguments not supported in this target, function: decodeSerializableElement
+SurfaceTextureListener.onSurfaceTextureDestroyed()
+Syncing purchase with token %s, for store user ID %s
+SystemChrome.setApplicationSwitcherDescription
+TEXT_ENCODE
+TLS_AES_128_CCM_8_SHA256
+TLS_AES_128_CCM_SHA256
+TLS_AES_128_GCM_SHA256
+TLS_AES_256_GCM_SHA384
+TLS_DHE_DSS_WITH_AES_128_CBC_SHA
+TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+TLS_DHE_DSS_WITH_AES_128_GCM_SHA256
+TLS_DHE_DSS_WITH_AES_256_CBC_SHA
+TLS_DHE_DSS_WITH_AES_256_CBC_SHA256
+TLS_DHE_DSS_WITH_AES_256_GCM_SHA384
+TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+TLS_DHE_RSA_WITH_AES_128_CBC_SHA256
+TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+TLS_DHE_RSA_WITH_AES_256_CBC_SHA256
+TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA
+TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA
+TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+TLS_DH_anon_WITH_AES_128_CBC_SHA
+TLS_DH_anon_WITH_AES_128_CBC_SHA256
+TLS_DH_anon_WITH_AES_128_GCM_SHA256
+TLS_DH_anon_WITH_AES_256_CBC_SHA
+TLS_DH_anon_WITH_AES_256_CBC_SHA256
+TLS_DH_anon_WITH_AES_256_GCM_SHA384
+TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA
+TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA
+TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+TLS_ECDHE_RSA_WITH_NULL_SHA
+TLS_ECDHE_RSA_WITH_RC4_128_SHA
+TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
+TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA
+TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256
+TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256
+TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
+TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384
+TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384
+TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+TLS_ECDH_RSA_WITH_AES_128_CBC_SHA
+TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256
+TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256
+TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
+TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384
+TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384
+TLS_ECDH_RSA_WITH_NULL_SHA
+TLS_ECDH_RSA_WITH_RC4_128_SHA
+TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA
+TLS_ECDH_anon_WITH_AES_128_CBC_SHA
+TLS_ECDH_anon_WITH_AES_256_CBC_SHA
+TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5
+TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA
+TLS_KRB5_WITH_3DES_EDE_CBC_MD5
+TLS_KRB5_WITH_3DES_EDE_CBC_SHA
+TLS_KRB5_WITH_DES_CBC_MD5
+TLS_KRB5_WITH_DES_CBC_SHA
+TLS_PSK_WITH_3DES_EDE_CBC_SHA
+TLS_PSK_WITH_AES_128_CBC_SHA
+TLS_PSK_WITH_AES_256_CBC_SHA
+TLS_RSA_WITH_AES_128_CBC_SHA
+TLS_RSA_WITH_AES_128_CBC_SHA256
+TLS_RSA_WITH_AES_128_GCM_SHA256
+TLS_RSA_WITH_AES_256_CBC_SHA
+TLS_RSA_WITH_AES_256_CBC_SHA256
+TLS_RSA_WITH_AES_256_GCM_SHA384
+TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+TLS_RSA_WITH_CAMELLIA_256_CBC_SHA
+TLS_RSA_WITH_NULL_SHA256
+TLS_RSA_WITH_SEED_CBC_SHA
+Test-keys aren\'t accepted on this build.
+TextCapitalization.characters
+TextCapitalization.none
+TextCapitalization.sentences
+TextCapitalization.words
+TextInputType.visiblePassword
+The current user profile is restricted and could not use authenticated features.
+The destination file already exists.
+The key was empty
+The key was not empty
+The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.
+The onKeyEventHandledCallback should be called exactly once.
+The specified API Key is not recognized.\nEnsure that you are using the public app-specific API key, which should look like \'goog_1a2b3c4d5e6f7h\' or \'amzn_1a2b3c4d5e6f7h\'.\nSee https://rev.cat/auth for more details.
+The user isn\u2019t authorized to do log in.
+The user must be signed in to make this API call.
+There are no products registered in the RevenueCat dashboard for your offerings. If you don\'t want to use the offerings system, you can safely ignore this message. To configure offerings and their products, follow the instructions in https://rev.cat/how-to-configure-offerings.\nMore information: https://rev.cat/why-are-offerings-empty
+There is no a com.journeyapps.barcodescanner.BarcodeView on provided layout with the id \
+There is no a com.journeyapps.barcodescanner.ViewfinderView on provided layout with the id \
+There is no singleton instance. Make sure you configure Purchases before trying to get the default instance. More info here: https://errors.rev.cat/configuring-sdk
+There\'s a problem with your configuration. No packages could be found for offering with identifier %s. This could be due to Products not being configured correctly in the RevenueCat dashboard or Play Store.\nTo configure products, follow the instructions in https://rev.cat/how-to-configure-offerings.\nMore information: https://rev.cat/why-are-offerings-empty
+There\'s a problem with your configuration. None of the products registered in the RevenueCat dashboard could be fetched from the Play Store.\nMore information: https://rev.cat/why-are-offerings-empty
+This function can only be used for API Level < 29.
+This method is only supported on API level 23+
+This serializer can be used only with Json format.Expected Decoder to be JsonDecoder, got 
+This serializer can be used only with Json format.Expected Encoder to be JsonEncoder, got 
+This shouldn\'t happen. Gms API throwing this exception should support the recovery Intent.
+TitleAndDescription
+To use this API you must specify a PurchasesUpdateListener when initializing a BillingClient.
+Token data: 
+TokenData
+Tokens already posted: %s
+Tokens in cache before saving %s
+Tried to overwrite the destination, but failed to delete it.
+Trying to configure Purchases while the device is locked. If you need to support this scenario, ensure you *always* configure Purchases with a Context created with `createDeviceProtectedStorageContext()` to avoid undefined behavior.\nSee https://developer.android.com/reference/android/content/Context#createDeviceProtectedStorageContext() for more info.
+Trying to use platform views with API 
+TypefaceCompatApi21Impl
+TypefaceCompatApi24Impl
+TypefaceCompatApi26Impl
+UNAUTHORIZED
+UNREGISTERED_ON_API_CONSOLE
+UPDATE_WARNING_DESCRIPTION
+Unable to close AssetFileDescriptor
+Unable to create linkToken json
+Unable to decode the license with the public key provided by the developer
+Unable to get FileDescriptor.setInt$
+Unable to load authentication Key
+Unable to load the public key from the apk
+Unable to resolve activity from window token. Missing a call to #onWindowLayoutChangeListenerAdded()?
+Unable to retrieve metadata value for enableBillingOverridesTesting.
+Unassigned WxApi
+Unexpected JSON token at offset 
+Unexpected end of input due to malformed JSON during ignoring unknown keys
+Unknown preference type for key 
+UrlResponseInfo@[%s][%s]: urlChain = %s, httpStatus = %d %s, headers = %s, wasCached = %b, negotiatedProtocol = %s, proxyServer= %s, receivedByteCount = %d
+Usage: com.amazon.mas.kiwi.util.KiwiVersionEncrypter <textToBeEncrypted> [<encryptToFileName>]
+Use \'ignoreUnknownKeys = true\' in \'Json {}\' builder to ignore unknown keys.
+Using a Test Store API key.\nThe Test Store is for development only. Never use a Test Store API key in production. Our SDK will crash if using it in production. Test Store purchases are simulated, do not use Google Play or Amazon store, and generate no revenue. Apps submitted with a Test Store API key will be rejected during App Review.
+VISIBLE_PASSWORD
+Value must follow key in a map, index for key: 
+Verification: Request to \'%s\' provided an intermediate key that did not verify correctly. Reason %s
+Verifying auth token: 
+WWW-Authenticate
+WXAPiSecurityHelper, extra check do next step: check fail, stop process!
+WXAPiSecurityHelper, extra check do next step: check pass, doLaunchApp
+WXAPiSecurityHelper, extra check fail, return
+WXAPiSecurityHelper, extra check pass, doLaunchApp
+WXAPiSecurityHelper, hold on request, extra check need to do next step
+WeakPassword
+WechatAuth_Err_Auth_Stopped
+WechatAuth_Err_Cancel
+WechatAuth_Err_JsonDecodeErr
+WechatAuth_Err_NetworkErr
+WechatAuth_Err_NormalErr
+WechatAuth_Err_OK
+WechatAuth_Err_Timeout
+WrappedDrawableApi21
+X-Goog-Api-Key
+You can consumeRestoredStateForKey only after super.onCreate of corresponding component
+You need to use a Theme.AppCompat theme (or descendant) with this activity.
+[GoogleAuthUtil] error status:%s with method:%s
+\' can\'t be used in JSON as a key in the map. It should have either primitive or enum kind, but its kind is \'
+\', productDetailsToken=\'
+\', with key: \'
+\'.\nUse \'allowStructuredMapKeys = true\' in \'Json {}\' builder to convert such maps to [key1, value1, key2, value2,...] arrays.
+\'.\nUse \'ignoreUnknownKeys = true\' in \'Json {}\' builder to ignore unknown keys.\nCurrent input: 
+\n                The name of serial descriptor should uniquely identify associated serializer.\n                For serial name 
+\n Expected 0, 1 or DECODE_DONE(-1), but found 
+\nKeyboard insets: Bottom: 
+\u203c\ufe0f Using device-protected storage. Make sure to *always* configure Purchases with a Context object created using `createDeviceProtectedStorageContext()` to avoid undefined behavior.\nSee https://developer.android.com/reference/android/content/Context#createDeviceProtectedStorageContext() for more info.
+_geta8key_redirect_url
+_geta8key_url
+_launch_wxminiprogram_token
+_message_token
+_wxapi_add_card_to_wx_card_list
+_wxapi_basereq_openid
+_wxapi_basereq_transaction
+_wxapi_baseresp_errcode
+_wxapi_baseresp_errstr
+_wxapi_baseresp_openId
+_wxapi_baseresp_transaction
+_wxapi_channel_share_video_jump_info_identifier
+_wxapi_choose_card_from_wx_card_app_id
+_wxapi_choose_card_from_wx_card_can_multi_select
+_wxapi_choose_card_from_wx_card_card_id
+_wxapi_choose_card_from_wx_card_card_sign
+_wxapi_choose_card_from_wx_card_card_type
+_wxapi_choose_card_from_wx_card_list
+_wxapi_choose_card_from_wx_card_location_id
+_wxapi_choose_card_from_wx_card_nonce_str
+_wxapi_choose_card_from_wx_card_sign_type
+_wxapi_choose_card_from_wx_card_time_stamp
+_wxapi_command_type
+_wxapi_create_chatroom_chatroom_name
+_wxapi_create_chatroom_chatroom_nickname
+_wxapi_create_chatroom_ext_msg
+_wxapi_create_chatroom_group_id
+_wxapi_finder_authBuffer
+_wxapi_finder_extMsg
+_wxapi_finder_feedID
+_wxapi_finder_nonceID
+_wxapi_finder_notGetReleatedList
+_wxapi_finder_open_event_eventId
+_wxapi_finder_open_event_extInfo
+_wxapi_finder_open_event_extMsg
+_wxapi_finder_open_event_username
+_wxapi_finder_share_video_extData
+_wxapi_finder_share_video_path
+_wxapi_finder_start_live_info_data
+_wxapi_finder_userName
+_wxapi_getmessage_req_country
+_wxapi_getmessage_req_lang
+_wxapi_invoice_auth_insert_order_id
+_wxapi_invoice_auth_insert_req_url
+_wxapi_join_chatroom_chatroom_nickname
+_wxapi_join_chatroom_ext_msg
+_wxapi_join_chatroom_group_id
+_wxapi_jump_to_webview_url
+_wxapi_launch_req_country
+_wxapi_launch_req_lang
+_wxapi_nontax_pay_order_id
+_wxapi_nontax_pay_req_url
+_wxapi_open_busi_lucky_money_appid
+_wxapi_open_busi_lucky_money_nonceStr
+_wxapi_open_busi_lucky_money_package
+_wxapi_open_busi_lucky_money_signType
+_wxapi_open_busi_lucky_money_signature
+_wxapi_open_busi_lucky_money_timeStamp
+_wxapi_open_business_webview_query_info
+_wxapi_open_business_webview_query_type
+_wxapi_open_business_webview_result
+_wxapi_open_webview_result
+_wxapi_pay_insourance_order_id
+_wxapi_pay_insourance_req_url
+_wxapi_payoptions_callback_classname
+_wxapi_payoptions_callback_flags
+_wxapi_payreq_appid
+_wxapi_payreq_extdata
+_wxapi_payreq_noncestr
+_wxapi_payreq_packagevalue
+_wxapi_payreq_partnerid
+_wxapi_payreq_prepayid
+_wxapi_payreq_sign
+_wxapi_payreq_sign_type
+_wxapi_payreq_timestamp
+_wxapi_payresp_extdata
+_wxapi_payresp_prepayid
+_wxapi_payresp_returnkey
+_wxapi_scan_qrcode_result
+_wxapi_scene_data_state_id
+_wxapi_scene_data_state_jump_info_identifier
+_wxapi_scene_data_state_title
+_wxapi_scene_data_state_token
+_wxapi_sendauth_options_callback_classname
+_wxapi_sendauth_options_callback_flags
+_wxapi_sendauth_req_ext_data
+_wxapi_sendauth_req_isoption1
+_wxapi_sendauth_req_non_automatic
+_wxapi_sendauth_req_scope
+_wxapi_sendauth_req_state
+_wxapi_sendauth_resp_auth_result
+_wxapi_sendauth_resp_country
+_wxapi_sendauth_resp_lang
+_wxapi_sendauth_resp_state
+_wxapi_sendauth_resp_tdi_buffer
+_wxapi_sendauth_resp_token
+_wxapi_sendauth_resp_url
+_wxapi_sendmessagetowx_req_media_type
+_wxapi_sendmessagetowx_req_scene
+_wxapi_sendmessagetowx_req_use_open_id
+_wxapi_showmessage_req_country
+_wxapi_showmessage_req_lang
+_wxapi_subscribemessage_req_reserved
+_wxapi_subscribemessage_req_scene
+_wxapi_subscribemessage_req_templateid
+_wxapi_subscribemessage_resp_action
+_wxapi_subscribemessage_resp_reserved
+_wxapi_subscribemessage_resp_scene
+_wxapi_subscribemessage_resp_templateid
+_wxapi_subscribeminiprogram_req_miniprogramappid
+_wxapi_subscribeminiprogram_resp_nickname
+_wxapi_subscribeminiprogram_resp_unionId
+_wxemojisharedobject_desc
+_wxemojisharedobject_designer_name
+_wxemojisharedobject_designer_rediretcturl
+_wxemojisharedobject_designer_uin
+_wxminiprogram_issecretmsg
+_wxobject_description
+_wxwebpageobject_issecretmsg
+`destination` cannot be null when `action` is `navigate_to`.
+`sheet` cannot be null when `destination` is `sheet`.
+`url` cannot be null when `destination` is `privacy_policy`.
+`url` cannot be null when `destination` is `terms`.
+`url` cannot be null when `destination` is `url`.
+account_capability_api
+account_data_service_token
+action_key
+activePurchasesByHashedToken
+addFontFromAssetManager
+addSuccessfullyPostedToken
+addSuccessfullyPostedToken(Ljava/lang/String;)V
+allPossibleBillingResponseCodes
+allowSharingPlayStoreAccount is set to false and restorePurchases has been called. This will \'alias\' any app user id\'s sharing the same receipt. Are you sure you want to do this? More info here: https://errors.rev.cat/allowsSharingPlayStoreAccount
+amazon.tokens
+android.security.action.KEYCHAIN_CHANGED
+android.security.action.KEY_ACCESS_CHANGED
+android.security.extra.KEY_ACCESSIBLE
+android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION
+androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION
+androidx.lifecycle.BundlableSavedStateRegistry.key
+androidx.lifecycle.ViewModelProvider.DefaultKey:
+androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.PANE_TITLE_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ACTION_ID_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_END_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_FLAGS_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ID_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY
+androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY
+apiKey
+apiKeyValidationResult
+apiKeyValidator
+apiPath
+application/x-www-form-urlencoded
+assetBaseURL
+assetFileDescriptor
+asset_base_url
+attributesJSONObject.keys()
+attributionKey
+auth fail, invalid argument, appId = %s, scope = %s
+auth, already running, no need to start auth again
+auth.password
+auth.userName
+authByQRCode
+authCode
+authParams
+auth_blockstore
+auth_clear_restore_credential
+auth_create_restore_credential
+auth_get_restore_credential
+authenticate
+authorization
+authorization-error/canceled
+authtoken
+baseKey
+billingOverrideService.getBillingOverride
+blockstore_is_end_to_end_encryption_available
+brieflyShowPassword
+cacheEditor.putString(ap\u2026serIDCacheKey, appUserID)
+cacheKey
+checkArgs fail, description is invalid
+checkRuleCanPass, key = 
+cipherSuite
+cipherSuite == 
+cipherSuite == null
+cipherSuites
+cipherSuitesIntersection
+clear token
+cleverTapID
+com.google.android.apps.play.billingtestcompanion.BillingOverrideService.BIND
+com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService
+com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideServiceCallback
+com.google.android.auth.IAuthManagerService
+com.google.android.gms.auth.APPAUTH_SIGN_IN
+com.google.android.gms.auth.GOOGLE_SIGN_IN
+com.google.android.gms.auth.GetToken
+com.google.android.gms.auth.NO_IMPL
+com.google.android.gms.auth.account.authapi.START
+com.google.android.gms.auth.account.data.IGetTokenWithDetailsCallback
+com.google.android.gms.auth.account.data.IGoogleAuthService
+com.google.android.gms.auth.api.credentials.internal.ICredentialsService
+com.google.android.gms.auth.api.credentials.service.START
+com.google.android.gms.auth.api.fallback
+com.google.android.gms.auth.api.internal.IAuthService
+com.google.android.gms.auth.api.signin.RevocationBoundService.clearClientState
+com.google.android.gms.auth.api.signin.RevocationBoundService.disconnect
+com.google.android.gms.auth.api.signin.internal.IRevocationService
+com.google.android.gms.auth.api.signin.internal.ISignInCallbacks
+com.google.android.gms.auth.api.signin.internal.ISignInService
+com.google.android.gms.auth.api.signin.service.START
+com.google.android.gms.auth.blockstore.DEFAULT_BYTES_DATA_KEY
+com.google.android.gms.auth.blockstore.internal.IBlockstoreService
+com.google.android.gms.auth.blockstore.internal.IDeleteBytesCallback
+com.google.android.gms.auth.blockstore.internal.IRetrieveBytesCallback
+com.google.android.gms.auth.blockstore.internal.IStoreBytesCallback
+com.google.android.gms.auth.blockstore.service.START
+com.google.android.gms.auth.service.START
+com.google.android.gms.auth_account
+com.google.android.gms.common.api.internal.IStatusCallback
+com.google.android.gms.dynamite.descriptors.
+com.google.android.gms.signin.internal.forceCodeForRefreshToken
+com.google.android.gms.signin.internal.idTokenRequested
+com.google.android.gms.signin.internal.usePromptModeForAuthCode
+com.google.android.gms.signin.internal.waitForAccessTokenRefresh
+com.google.android.play.billingclient.enableBillingOverridesTesting
+com.google.protobuf.DescriptorMessageInfoFactory
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination.CustomerCenter
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination.PrivacyPolicy
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination.Sheet
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination.Terms
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination.Unknown
+com.revenuecat.purchases.paywalls.components.ButtonComponent.Destination.Url
+com.revenuecat.purchases.paywalls.components.common.LocalizationKey
+com.revenuecat.purchases.paywalls.components.common.VariableLocalizationKey
+com.tencent.mm.openapi.token
+com.tencent.mm.plugin.openapi.Intent.ACTION_HANDLE_APP_REGISTER
+com.tencent.mm.plugin.openapi.Intent.ACTION_HANDLE_APP_UNREGISTER
+com.tencent.mm.sdk.openapi
+common_google_play_services_api_unavailable_text
+completedExpandBuffersAndPauseFlag$volatile
+config_showMenuShortcutsWhenKeyboardPresent
+content://com.tencent.mm.sdk.comm.provider/genTokenForOpenSdk
+content://com.tencent.mm.sdk.comm.provider/getA8Key
+content://com.tencent.mm.sdk.comm.provider/launchWXMiniprogramWithToken
+content://com.tencent.mm.sdk.comm.provider/launchWxaOpenApiRedirectingPage
+createWXAPI, appId = 
+decode(publicKey, Base64.DEFAULT)
+decoder
+defaultDeserializerProvider
+deleteAll was set to true but other constraint(s) was also provided: keys
+desc
+description
+descriptor
+deserializer
+desktop_drop
+destination
+destinationDirPath
+destroyNativeStreamLocked 
+destroy_engine_with_activity
+dev-keys
+dev.flutter.pigeon.FileSelectorApi.getDirectoryPath
+dev.flutter.pigeon.FileSelectorApi.openFile
+dev.flutter.pigeon.FileSelectorApi.openFiles
+dev.flutter.pigeon.GoogleSignInApi.clearAuthCache
+dev.flutter.pigeon.GoogleSignInApi.disconnect
+dev.flutter.pigeon.GoogleSignInApi.getAccessToken
+dev.flutter.pigeon.GoogleSignInApi.init
+dev.flutter.pigeon.GoogleSignInApi.isSignedIn
+dev.flutter.pigeon.GoogleSignInApi.requestScopes
+dev.flutter.pigeon.GoogleSignInApi.signIn
+dev.flutter.pigeon.GoogleSignInApi.signInSilently
+dev.flutter.pigeon.GoogleSignInApi.signOut
+dev.flutter.pigeon.PathProviderApi.getApplicationCachePath
+dev.flutter.pigeon.PathProviderApi.getApplicationDocumentsPath
+dev.flutter.pigeon.PathProviderApi.getApplicationSupportPath
+dev.flutter.pigeon.PathProviderApi.getExternalCachePaths
+dev.flutter.pigeon.PathProviderApi.getExternalStoragePath
+dev.flutter.pigeon.PathProviderApi.getExternalStoragePaths
+dev.flutter.pigeon.PathProviderApi.getTemporaryPath
+dev.flutter.pigeon.SharedPreferencesApi.clear
+dev.flutter.pigeon.SharedPreferencesApi.getAll
+dev.flutter.pigeon.SharedPreferencesApi.remove
+dev.flutter.pigeon.SharedPreferencesApi.setBool
+dev.flutter.pigeon.SharedPreferencesApi.setDouble
+dev.flutter.pigeon.SharedPreferencesApi.setInt
+dev.flutter.pigeon.SharedPreferencesApi.setString
+dev.flutter.pigeon.SharedPreferencesApi.setStringList
+dev.flutter.pigeon.url_launcher_android.UrlLauncherApi.canLaunchUrl
+dev.flutter.pigeon.url_launcher_android.UrlLauncherApi.closeWebView
+dev.flutter.pigeon.url_launcher_android.UrlLauncherApi.launchUrl
+dev.flutter.pigeon.url_launcher_android.UrlLauncherApi.openUrlInApp
+dev.flutter.pigeon.url_launcher_android.UrlLauncherApi.supportsCustomTabs
+device_account_api
+disable-service-auth-codes
+elementDesc
+enableAdServicesAttributionTokenCollection
+encode(bytes, Base64.DEFAULT)
+encode(it)
+encode(it, Base64.NO_WRAP)
+encodeSet
+encodedId
+encoder
+enumDescriptor
+errorCode.httpCode == -1
+factory_reset_protection_api
+failed_to_recover_auth
+fetch_token
+finishTransactions is set to false and a purchase has been started. Are you sure you want to do this? More info here: https://errors.rev.cat/finishTransactions
+flutter-assets-dir
+flutter/keyboard
+flutter/keydata
+flutter/keyevent
+flutterAssets
+flutter_assets
+flutter_web_auth
+forceCodeForRefreshToken
+forwardError(Lcom/android/billingclient/api/BillingResult;)V
+fromString(decoder.decodeString())
+gaiaid_primary_email_api
+get() did not throw CancellationException, despite reporting isCancelled() == true: 
+get() threw CancellationException, despite reporting isCancelled() == false: 
+getDescriptor
+getDiffDevOAuth fail, unsupported version = 
+getDiffDevOAuth, version = 
+getFlutterAssets(...)
+getKeyboardState
+getLogger(Http2::class.java.name)
+getResources() or getAssets() has already been called
+getString(EntitlementsRe\u2026nKeys.PRODUCT_IDENTIFIER)
+getTokenFromWX , token is null , if your app targetSdkVersion >= 30, include \'com.tencent.mm\' in a set of <package> elements inside the <queries> element
+getTokenFromWX fail, exception = 
+getTokenFromWX token is 
+getTokenRefactor__account_data_service_sample_percentage
+getTokenRefactor__account_data_service_tokenAPI_usable
+getTokenRefactor__account_manager_timeout_seconds
+getTokenRefactor__android_id_shift
+getTokenRefactor__blocked_packages
+getTokenRefactor__chimera_get_token_evolved
+getTokenRefactor__clear_token_timeout_seconds
+getTokenRefactor__default_task_timeout_seconds
+getTokenRefactor__gaul_accounts_api_evolved
+getTokenRefactor__gaul_token_api_evolved
+getTokenRefactor__get_token_timeout_seconds
+getTokenRefactor__gms_account_authenticator_evolved
+getTokenRefactor__gms_account_authenticator_sample_percentage
+getTokenWithDetails
+getTokens
+getVisibleInsets() should not be called on API >= 30. Use WindowInsets.isVisible() instead.
+getWXAppSupportAPI fail, WXMsgImpl has been detached
+get_restricted_accounts_api
+google_auth_api
+google_auth_service_accounts
+google_auth_service_token
+hashedTokens
+http
+http request fail, ex = 
+http respCode = 
+http response = 
+http/1.0
+http/1.1
+http2Connection
+http:
+http://
+http://schemas.android.com/apk/res/android
+http://www.amazon.com/gp/mas/get-appstore/android/ref=mas_mx_mba_iap_dl
+httpClient
+httpGet end
+httpGet ex:
+httpGet, url is null
+httpResult
+httpURLConnectionGet 300
+httponly
+https
+https:
+https://accounts.google.com/o/oauth2/revoke?token=
+https://api-diagnostics.revenuecat.com/
+https://api-paywalls.revenuecat.com/
+https://api-production.8-lives-cat.io/
+https://api.revenuecat.com/
+https://long.open.weixin.qq.com/connect/l/qrconnect?f=json&uuid=%s
+https://mp.weixin.qq.com/publicpoc/opensdkconf?action=GetShareConf&appid=%s&sdkVersion=%s&buffer=%s
+https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps
+https://play.google.com/store/account/subscriptions
+https://www.amazon.com/appstore-error-help
+https://www.googleapis.com/auth/games
+https://www.googleapis.com/auth/games_lite
+hub_mode_api
+idTokenRequested
+includeSubdomains
+incomingAuthToken
+inlineDescriptor
+intent_extra_data_key
+intermediateKey
+intermediateKeyExpiration
+intermediateKeySignature
+invoice_auth_insert
+java.lang.module.ModuleDescriptor
+jsonKey
+jsonObject.getString(JSON_NAME_KEY)
+kKeyboard
+key = ?
+key == null
+key == null || value == null
+key cannot be null or empty
+keyCode
+keyDesc
+keyDescriptor
+keyEquivalence
+keyName
+keySerializer
+keyStrength
+keyToMatch
+key_name
+keydown
+keyframe
+keymap
+keys
+keys()
+keyup
+keyword
+linkSigningKey
+linkToken
+linkToken.schema
+linkToken.token
+mOnKeyListener
+mToken
+net_auth
+newPassword
+no cipher suites for cleartext connections
+nonSubscriptions.keys()
+null cannot be cast to non-null type T of kotlinx.serialization.internal.AbstractPolymorphicSerializer.deserialize$lambda$3
+null cannot be cast to non-null type com.revenuecat.purchases.common.subscriberattributes.SubscriberAttributeKey
+null cannot be cast to non-null type java.net.HttpURLConnection
+null cannot be cast to non-null type kotlin.Function1<@[ParameterName(name = \'className\')] kotlin.String?, kotlinx.serialization.DeserializationStrategy<out kotlin.Any>?>{ kotlinx.serialization.modules.SerializersModuleKt.PolymorphicDeserializerProvider<out kotlin.Any> }
+null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>
+null cannot be cast to non-null type kotlin.collections.MutableList<T of okhttp3.internal.Util.filterList>
+null cannot be cast to non-null type okhttp3.internal.connection.RealCall.CallReference
+null cannot be cast to non-null type okhttp3.internal.platform.Jdk8WithJettyBootPlatform.AlpnProvider
+null key in entry: null=
+oauth2:
+offerIdToken
+offerOverrides
+offerToken
+offerToken can not be empty
+offerToken is required for constructing ProductDetailsParams for subscriptions.
+offer_id_token
+offer_overrides
+okhttp.Http2
+okhttp.MockWebServer
+okhttp.OkHttpClient
+okhttp.TaskRunner
+okhttp/4.12.0
+okhttp3.
+okhttp3.mockwebserver.MockWebServer
+oldSkuPurchaseToken
+onAuthByQRCodeFinished
+onAuthFinish, errCode = %s, authCode = %s
+onAuthGotQRCode
+onAuthGotQrcode, qrcodeImgPath = 
+onAuthResponse
+onDestroy
+onDestroyView()
+onMenuKeyEvent
+onPostExecute, get qrcode fail, OAuthErrCode = %s
+onQRCodeScanned
+onQrcodeScanned
+onRequestPermissionsResult is called without results. This is probably caused by interfering request codes. If you see this error, please file an issue in flutter-permission-handler, including a list of plugins used by this application: https://github.com/Baseflow/flutter-permission-handler/issues
+overrides
+overrides.txt
+parse fail, qrcodeBase64 is null
+parse(getString(jsonKey))
+password
+performAuthorizationRequest
+platformViewsController must be set before attempting to destroy an overlay surface
+please config  wxapi first
+please config wxapi first
+polyBase2DefaultDeserializerProvider
+productsObject.keys()
+proxy-authenticate
+proxy-authorization
+proxyAuthenticator
+publicKey
+publicKey.encoded
+publicKeyBytes
+purchase.purchaseToken
+purchaseToken
+purchasesByHashedToken
+pushToken
+qrcodebase64
+readIfAbsent(Lkotlinx/serialization/descriptors/SerialDescriptor;I)Z
+redemptionToken
+redemption_token
+refreshToken
+request http, url = 
+retrieveAll was set to true but other constraint(s) was also provided: keys
+returnKey
+seKeyword
+security_key_appid_
+security_key_resp
+security_key_timestamp_second
+sendAuth
+sendersAndCloseStatus$volatile
+serializedHTTPResult
+serverAuthCode
+serverAuthRequested
+serverDescription
+service descriptor mismatch: 
+serviceActionBundleKey
+serviceResponseIntentKey
+setCleverTapID
+setKeyword
+setPushToken
+show_password
+signingInGoogleApiClients
+skuDetailsToken
+skuDetailsTokens
+source should be AssetFileDescriptor but it\'s 
+ssiToken
+ssi_linkSigningKey
+ssi_linkToken
+sslSocket.enabledCipherSuites
+start auth, appId = 
+stopAuth
+stopAuth fail, ex = 
+stopAuthByQRCode
+storefrontCacheKey
+subscriptions.keys()
+supportedCipherSuites
+supportedCipherSuites[indexOfFallbackScsv]
+temp_key
+test-keys
+textCapitalization
+this instantiation of UserRecoverableAuthException doesn\'t support an Intent.
+this.keys()
+this.purchaseToken
+title_and_description
+token
+token is null
+token retrieval
+tokenDetails
+tokenId
+tokensToSkusMap
+unknown decoder: 
+unmodifiableMap<String?, String>(newAuthParams)
+unsyncedSubscriberAttributesByKey
+update_warning_description
+user_recoverable_auth
+valid token
+valueDesc
+windowToken
+www-authenticate
+wx_token_key
+{id: %s, type: %s, offer token: %s}
+
+
+APIs SENSIBLES:
+--------------------------------------------------------------------------------
+
+ASSET_MANAGER:
+  Lcom/amazon/a/a/o/b/d
+  Lcom/revenuecat/purchases/paywalls/OfferingFontPreDownloader
+  Lh4/d$a
+  Lh5/a
+  Li/d
+  Lio/flutter/embedding/engine/FlutterJNI
+  Lio/flutter/embedding/engine/a
+  Lk/f2
+  Lk/z1
+  Lorg/chromium/base/ApkAssets
+  Lu/i
+
+BASE64:
+  Lc1/o
+  Lcom/google/android/datatransport/runtime/scheduling/jobscheduling/AlarmManagerSchedulerBroadcastReceiver
+  Lcom/google/android/datatransport/runtime/scheduling/jobscheduling/JobInfoSchedulerService
+  Lcom/revenuecat/purchases/common/UtilsKt
+  Lcom/revenuecat/purchases/common/verification/DefaultSignatureVerifier
+  Lcom/revenuecat/purchases/common/verification/Signature$Companion
+  Lcom/revenuecat/purchases/common/verification/SigningManager
+  Lcom/revenuecat/purchases/common/verification/SigningManager$Parameters
+  Lcom/tencent/mm/opensdk/diffdev/a/d$a
+  Le3/e
+  Lj1/d
+  Lj2/k0
+  Lj2/n5
+  Lk1/m0
+  Lk2/b
+  Lt/e
+  Lz/e
+  Lz5/l$a
+
+CRYPTO:
+  La3/d
+  La3/e$a
+  La3/e$b
+  La3/e$e
+  Lorg/chromium/net/AndroidKeyStore
+
+FILE_IO:
+  Landroid/graphics/Typeface$Builder
+  Landroidx/core/graphics/drawable/IconCompat
+  Landroidx/fragment/app/Fragment
+  Landroidx/fragment/app/f0
+  Landroidx/fragment/app/j
+  Landroidx/fragment/app/j$a
+  Landroidx/fragment/app/p
+  Landroidx/fragment/app/x
+  Lb6/b
+  Lb6/c
+  Lcom/amazon/a/a/b/b
+  Lcom/amazon/a/a/b/b$1
+  Lcom/amazon/a/a/b/c
+  Lcom/amazon/a/a/o/c/a/b
+  Lcom/amazon/c/a/a/a
+  Lcom/amazon/c/a/a/c
+  Lcom/amazon/c/a/a/d
+  Lcom/google/android/gms/common/api/internal/LifecycleCallback
+  Lcom/journeyapps/barcodescanner/b
+  Lcom/revenuecat/purchases/PurchasesFactory
+
+NETWORK:
+  La1/d
+  La1/d$a
+  La1/d$b
+  La8/a
+  La8/a$a
+  Lcom/amazon/a/a/i/g
+  Lcom/revenuecat/purchases/Purchases
+  Lcom/revenuecat/purchases/Purchases$Companion
+  Lcom/revenuecat/purchases/PurchasesFactory
+  Lcom/revenuecat/purchases/PurchasesFactory$createPurchases$lambda$8$$inlined$log$1
+  Lcom/revenuecat/purchases/PurchasesFactory$createPurchases$lambda$8$$inlined$log$2
+  Lcom/revenuecat/purchases/PurchasesFactory$createPurchases$lambda$8$$inlined$log$3
+  Lcom/revenuecat/purchases/PurchasesFactory$createPurchases$lambda$8$$inlined$log$4
+  Lcom/revenuecat/purchases/PurchasesFactory$createPurchases$lambda$8$$inlined$log$5
+  Lcom/revenuecat/purchases/PurchasesOrchestrator
+  Lcom/revenuecat/purchases/PurchasesOrchestrator$Companion
+  Lcom/revenuecat/purchases/common/AppConfig
+  Lcom/revenuecat/purchases/common/AppConfig$Companion
+  Lcom/revenuecat/purchases/common/AppConfig$baseURL$lambda$1$$inlined$log$1
+  Lcom/revenuecat/purchases/common/Backend$aliasUsers$call$1
+
+SHARED_PREFS:
+  Lcom/amazon/device/iap/internal/b/a
+  Lcom/amazon/device/iap/internal/b/d
+  Lcom/amazon/device/iap/internal/b/d$1
+  Lcom/amazon/device/iap/internal/util/a
+  Lcom/revenuecat/purchases/PurchasesFactory
+  Lcom/revenuecat/purchases/common/SharedPreferencesManager
+  Lcom/revenuecat/purchases/common/SharedPreferencesManager$1
+  Lcom/revenuecat/purchases/common/SharedPreferencesManager$migratePreferenceValue$$inlined$log$1
+  Lcom/revenuecat/purchases/common/caching/DeviceCache
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$apiKeyPrefix$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$appUserIDCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$customerInfoCachesLastUpdatedCacheBaseKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$legacyAppUserIDCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$offeringsResponseCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$productEntitlementMappingCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$productEntitlementMappingLastUpdatedCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$storefrontCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$tokensCacheKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$virtualCurrenciesCacheBaseKey$2
+  Lcom/revenuecat/purchases/common/caching/DeviceCache$virtualCurrenciesLastUpdatedCacheBaseKey$2
+
+WEBVIEW:
+  Lio/flutter/plugins/urllauncher/WebViewActivity
+  Lio/flutter/plugins/urllauncher/WebViewActivity$b
+  Lio/flutter/plugins/urllauncher/WebViewActivity$c
+  Lio/flutter/plugins/urllauncher/WebViewActivity$c$a
