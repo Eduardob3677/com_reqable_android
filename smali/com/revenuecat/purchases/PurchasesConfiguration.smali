@@ -588,7 +588,8 @@
 .method public final getVerificationMode()Lcom/revenuecat/purchases/EntitlementVerificationMode;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/PurchasesConfiguration;->verificationMode:Lcom/revenuecat/purchases/EntitlementVerificationMode;
+    # Patched: Always return DISABLED verification mode
+    sget-object v0, Lcom/revenuecat/purchases/EntitlementVerificationMode;->DISABLED:Lcom/revenuecat/purchases/EntitlementVerificationMode;
 
     return-object v0
 .end method

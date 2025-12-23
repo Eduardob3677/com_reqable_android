@@ -463,7 +463,8 @@
 .method public final getVerificationResult()Lcom/revenuecat/purchases/VerificationResult;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/common/networking/HTTPResult;->verificationResult:Lcom/revenuecat/purchases/VerificationResult;
+    # Patched: Always return VERIFIED for HTTP responses
+    sget-object v0, Lcom/revenuecat/purchases/VerificationResult;->VERIFIED:Lcom/revenuecat/purchases/VerificationResult;
 
     return-object v0
 .end method
