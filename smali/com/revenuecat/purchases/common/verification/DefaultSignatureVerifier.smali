@@ -107,20 +107,8 @@
 
     invoke-static {p2, v0}, Lv6/q;->f(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :try_start_0
-    iget-object v0, p0, Lcom/revenuecat/purchases/common/verification/DefaultSignatureVerifier;->verifier:La3/c;
-
-    invoke-virtual {v0, p1, p2}, La3/c;->a([B[B)V
-    :try_end_0
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
+    # Patched: Always return true to bypass signature verification
     const/4 p1, 0x1
 
-    goto :goto_0
-
-    :catch_0
-    const/4 p1, 0x0
-
-    :goto_0
     return p1
 .end method

@@ -68,15 +68,18 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/CustomerInfo$activeSubscriptions$2;->this$0:Lcom/revenuecat/purchases/CustomerInfo;
-
-    invoke-virtual {v0}, Lcom/revenuecat/purchases/CustomerInfo;->getAllExpirationDatesByProduct()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/revenuecat/purchases/CustomerInfo;->access$activeIdentifiers(Lcom/revenuecat/purchases/CustomerInfo;Ljava/util/Map;)Ljava/util/Set;
-
-    move-result-object v0
+    # Patched: Always return a set with "premium" subscription
+    new-instance v0, Ljava/util/HashSet;
+    
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    
+    const-string v1, "premium"
+    
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "pro"
+    
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     return-object v0
 .end method
