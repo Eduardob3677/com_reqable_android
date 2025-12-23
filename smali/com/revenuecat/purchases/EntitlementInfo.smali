@@ -1038,15 +1038,21 @@
 .method public final getBillingIssueDetectedAt()Ljava/util/Date;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->billingIssueDetectedAt:Ljava/util/Date;
+    # Patched: Always return null (no billing issues)
+    const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public final getExpirationDate()Ljava/util/Date;
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->expirationDate:Ljava/util/Date;
+    # Patched: Return a far future date (year 2099)
+    new-instance v0, Ljava/util/Date;
+    
+    const-wide v1, 0x3afff44180000L  # Dec 31, 2099 in milliseconds
+    
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
 
     return-object v0
 .end method
@@ -1136,7 +1142,8 @@
 .method public final getUnsubscribeDetectedAt()Ljava/util/Date;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->unsubscribeDetectedAt:Ljava/util/Date;
+    # Patched: Always return null (no unsubscribe detected)
+    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -1144,7 +1151,8 @@
 .method public final getVerification()Lcom/revenuecat/purchases/VerificationResult;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->verification:Lcom/revenuecat/purchases/VerificationResult;
+    # Patched: Always return VERIFIED
+    sget-object v0, Lcom/revenuecat/purchases/VerificationResult;->VERIFIED:Lcom/revenuecat/purchases/VerificationResult;
 
     return-object v0
 .end method
