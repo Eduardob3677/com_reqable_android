@@ -168,10 +168,10 @@ echo "=" | tr '\n' '=' | head -c 80 && echo ""
 echo "RESUMEN"
 echo "=" | tr '\n' '=' | head -c 80 && echo ""
 echo ""
-echo "📊 Parches aplicados: $PATCHES_APPLIED / 8"
+echo "📊 Parches aplicados: $PATCHES_APPLIED / 13"
 echo ""
 
-if [ $PATCHES_APPLIED -eq 8 ]; then
+if [ $PATCHES_APPLIED -eq 13 ]; then
     echo "✅ Todos los parches han sido aplicados exitosamente"
     echo ""
     echo "🔨 Próximos pasos:"
@@ -189,5 +189,70 @@ else
     echo "❌ Los parches no están aplicados"
     echo "   Los archivos smali ya fueron modificados manualmente"
     echo "   Verifica que las modificaciones sean correctas"
+fi
+echo ""
+
+# ============================================================================
+# Parche 9: EntitlementInfo.getExpirationDate() - Fecha futura
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getExpirationDate() → año 2099"; then
+    if check_patch "$FILE1" "Patched: Return a far future date"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+# ============================================================================
+# Parche 10: EntitlementInfo.getBillingIssueDetectedAt() - Sin problemas
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getBillingIssueDetectedAt() → null"; then
+    if check_patch "$FILE1" "Patched: Always return null (no billing issues)"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+# ============================================================================
+# Parche 11: EntitlementInfo.getUnsubscribeDetectedAt() - Sin cancelaciones
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getUnsubscribeDetectedAt() → null"; then
+    if check_patch "$FILE1" "Patched: Always return null (no unsubscribe detected)"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+# ============================================================================
+# Parche 12: EntitlementInfo.getVerification() - Siempre VERIFIED
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getVerification() → VERIFIED"; then
+    if check_patch "$FILE1" "individual.*VERIFIED"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+# ============================================================================
+# Parche 13: EntitlementInfos.getVerification() - Siempre VERIFIED (global)
+# ============================================================================
+if apply_patch "$FILE8" "EntitlementInfos.getVerification() → VERIFIED (global)"; then
+    if grep -q "Patched.*VERIFIED" "$FILE8" 2>/dev/null; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
 fi
 echo ""
