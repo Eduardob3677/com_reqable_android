@@ -254,7 +254,7 @@
 .end method
 
 .method public final get(Ljava/lang/String;)Lcom/revenuecat/purchases/EntitlementInfo;
-    .locals 1
+    .locals 2
 
     const-string v0, "s"
 
@@ -276,10 +276,60 @@
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Lcom/revenuecat/purchases/EntitlementInfo;
+    check-cast v0, Lcom/revenuecat/purchases/EntitlementInfo;
     
+    # If still not found and looking for premium/pro, return any entitlement
+    if-nez v0, :cond_return
+    
+    # Check if requesting "pro" or "premium"
+    const-string v1, "pro"
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result v1
+    
+    if-nez v1, :cond_return_any
+    
+    const-string v1, "premium"
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result p1
+    
+    if-nez p1, :cond_return_any
+    
+    goto :cond_return
+    
+    :cond_return_any
+    # Return any entitlement from the active map
+    iget-object p1, p0, Lcom/revenuecat/purchases/EntitlementInfos;->active:Ljava/util/Map;
+    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+    move-result v1
+    
+    if-nez v1, :cond_try_all
+    
+    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    move-result-object p1
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result-object p1
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object p1
+    check-cast p1, Lcom/revenuecat/purchases/EntitlementInfo;
+    return-object p1
+    
+    :cond_try_all
+    # Try the all map if active is empty
+    iget-object p1, p0, Lcom/revenuecat/purchases/EntitlementInfos;->all:Ljava/util/Map;
+    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+    move-result v1
+    
+    if-nez v1, :cond_return
+    
+    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    move-result-object p1
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result-object p1
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object p1
+    check-cast p1, Lcom/revenuecat/purchases/EntitlementInfo;
     return-object p1
     
     :cond_return
@@ -298,6 +348,19 @@
         }
     .end annotation
 
+    # Patched: Return all entitlements as active
+    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfos;->active:Ljava/util/Map;
+    
+    # If active map is empty, return all map instead
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+    move-result v0
+    
+    if-eqz v0, :return_active
+    
+    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfos;->all:Ljava/util/Map;
+    return-object v0
+    
+    :return_active
     iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfos;->active:Ljava/util/Map;
 
     return-object v0
