@@ -256,3 +256,78 @@ if apply_patch "$FILE8" "EntitlementInfos.getVerification() → VERIFIED (global
     fi
 fi
 echo ""
+
+# ============================================================================
+# Parche 14: EntitlementInfo.getIdentifier() - Pro identifier
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getIdentifier() → pro"; then
+    if check_patch "$FILE1" "Patched: Always return \"pro\" identifier"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+# ============================================================================
+# Parche 15: EntitlementInfo.getProductIdentifier() - Pro product ID
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getProductIdentifier() → pro"; then
+    if check_patch "$FILE1" "Patched: Always return \"pro\" product identifier"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+# ============================================================================
+# Parche 16: EntitlementInfo.getProductPlanIdentifier() - Pro plan ID
+# ============================================================================
+if apply_patch "$FILE1" "EntitlementInfo.getProductPlanIdentifier() → pro"; then
+    if check_patch "$FILE1" "Patched: Always return \"pro\" product plan identifier"; then
+        echo "   ✅ Parche ya aplicado"
+        PATCHES_APPLIED=$((PATCHES_APPLIED + 1))
+    else
+        echo "   ⚠️  Este parche debe aplicarse manualmente"
+    fi
+fi
+echo ""
+
+echo "=" | tr '\n' '=' | head -c 80 && echo ""
+echo "RESUMEN ACTUALIZADO"
+echo "=" | tr '\n' '=' | head -c 80 && echo ""
+echo ""
+echo "📊 Parches aplicados: $PATCHES_APPLIED / 16"
+echo ""
+
+if [ $PATCHES_APPLIED -eq 16 ]; then
+    echo "✅ TODOS los parches han sido aplicados exitosamente"
+    echo ""
+    echo "🎯 Nuevos parches agregados:"
+    echo "   - getIdentifier() → Siempre retorna 'pro'"
+    echo "   - getProductIdentifier() → Siempre retorna 'pro'"
+    echo "   - getProductPlanIdentifier() → Siempre retorna 'pro'"
+    echo ""
+    echo "   Estos parches aseguran que la suscripción siempre se muestre como 'pro'"
+    echo "   en lugar de 'basic' después de iniciar sesión."
+    echo ""
+    echo "🔨 Próximos pasos:"
+    echo "   1. Recompilar la APK con: apktool b $SCRIPT_DIR -o reqable_patched.apk"
+    echo "   2. Firmar la APK con tu keystore"
+    echo "   3. Optimizar con zipalign"
+    echo "   4. Instalar en dispositivo Android"
+    echo ""
+    echo "📖 Ver LICENSE_PATCHES.md para instrucciones detalladas"
+elif [ $PATCHES_APPLIED -gt 0 ]; then
+    echo "⚠️  Algunos parches ya estaban aplicados ($PATCHES_APPLIED de 16)"
+    echo "   Si estás aplicando por primera vez, puede que necesites editar manualmente"
+    echo "   Consulta LICENSE_PATCHES.md para más detalles"
+else
+    echo "❌ Los parches no están aplicados"
+    echo "   Los archivos smali ya fueron modificados manualmente"
+    echo "   Verifica que las modificaciones sean correctas"
+fi
+echo ""

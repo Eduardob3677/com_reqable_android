@@ -1060,23 +1060,37 @@
 .method public final getIdentifier()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->identifier:Ljava/lang/String;
+    # Patched: Always return "pro" identifier
+    const-string v0, "pro"
 
     return-object v0
 .end method
 
 .method public final getLatestPurchaseDate()Ljava/util/Date;
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->latestPurchaseDate:Ljava/util/Date;
+    # Patched: Return current date as latest purchase date
+    new-instance v0, Ljava/util/Date;
+    
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    
+    move-result-wide v1
+    
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
 
     return-object v0
 .end method
 
 .method public final getOriginalPurchaseDate()Ljava/util/Date;
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->originalPurchaseDate:Ljava/util/Date;
+    # Patched: Return a date from 1 year ago as original purchase date
+    new-instance v0, Ljava/util/Date;
+    
+    # Jan 1, 2024 00:00:00 UTC (timestamp: 1704067200000)
+    const-wide v1, 0x18cd6298000L
+    
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
 
     return-object v0
 .end method
@@ -1084,7 +1098,8 @@
 .method public final getOwnershipType()Lcom/revenuecat/purchases/OwnershipType;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->ownershipType:Lcom/revenuecat/purchases/OwnershipType;
+    # Patched: Always return PURCHASED ownership type
+    sget-object v0, Lcom/revenuecat/purchases/OwnershipType;->PURCHASED:Lcom/revenuecat/purchases/OwnershipType;
 
     return-object v0
 .end method
@@ -1092,7 +1107,8 @@
 .method public final getPeriodType()Lcom/revenuecat/purchases/PeriodType;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->periodType:Lcom/revenuecat/purchases/PeriodType;
+    # Patched: Always return NORMAL period type (active subscription)
+    sget-object v0, Lcom/revenuecat/purchases/PeriodType;->NORMAL:Lcom/revenuecat/purchases/PeriodType;
 
     return-object v0
 .end method
@@ -1100,7 +1116,8 @@
 .method public final getProductIdentifier()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->productIdentifier:Ljava/lang/String;
+    # Patched: Always return "pro" product identifier
+    const-string v0, "pro"
 
     return-object v0
 .end method
@@ -1108,7 +1125,8 @@
 .method public final getProductPlanIdentifier()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->productPlanIdentifier:Ljava/lang/String;
+    # Patched: Always return "pro" product plan identifier
+    const-string v0, "pro"
 
     return-object v0
 .end method
@@ -1134,7 +1152,8 @@
 .method public final getStore()Lcom/revenuecat/purchases/Store;
     .locals 1
 
-    iget-object v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->store:Lcom/revenuecat/purchases/Store;
+    # Patched: Always return PLAY_STORE as the store
+    sget-object v0, Lcom/revenuecat/purchases/Store;->PLAY_STORE:Lcom/revenuecat/purchases/Store;
 
     return-object v0
 .end method
