@@ -1,0 +1,77 @@
+.class public final Lu1/c$a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lu1/c;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "a"
+.end annotation
+
+
+# instance fields
+.field public a:Ljava/util/List;
+
+.field public b:Z
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lu1/c$a;->a:Ljava/util/List;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lu1/c$a;->b:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Lu1/c;
+    .locals 3
+
+    new-instance v0, Lu1/c;
+
+    iget-object v1, p0, Lu1/c$a;->a:Ljava/util/List;
+
+    iget-boolean v2, p0, Lu1/c$a;->b:Z
+
+    invoke-direct {v0, v1, v2}, Lu1/c;-><init>(Ljava/util/List;Z)V
+
+    return-object v0
+.end method
+
+.method public b(Ljava/util/List;)Lu1/c$a;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lu1/c$a;"
+        }
+    .end annotation
+
+    const-string v0, "Keys cannot be set to null"
+
+    invoke-static {p1, v0}, Lz1/q;->l(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lu1/c$a;->a:Ljava/util/List;
+
+    return-object p0
+.end method
