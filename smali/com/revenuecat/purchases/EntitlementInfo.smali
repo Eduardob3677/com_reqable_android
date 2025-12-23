@@ -1368,7 +1368,8 @@
 .method public final isSandbox()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/revenuecat/purchases/EntitlementInfo;->isSandbox:Z
+    # Patched: Always return false (production purchase, not sandbox)
+    const/4 v0, 0x0
 
     return v0
 .end method
