@@ -68,17 +68,26 @@
         }
     .end annotation
 
-    # Patched: Always return a set with "premium" subscription
+    # Patched: Always return a set with multiple subscription identifiers
+    # This covers all possible subscription tier names the app might check
     new-instance v0, Ljava/util/HashSet;
     
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
     
+    # Add common subscription identifiers
     const-string v1, "premium"
-    
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     
     const-string v1, "pro"
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     
+    const-string v1, "reqable_pro"
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "reqable_premium"
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "professional"
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     return-object v0
